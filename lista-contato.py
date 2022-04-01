@@ -1,4 +1,3 @@
-# start point do programa
 def novoContato(nome, telefone):
     global id_novo_contato
     
@@ -7,6 +6,7 @@ def novoContato(nome, telefone):
     
     return contato
 
+# start point do programa
 if __name__ == '__main__':
     global id_novo_contato
     id_novo_contato = 0
