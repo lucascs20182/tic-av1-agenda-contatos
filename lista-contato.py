@@ -1,6 +1,20 @@
 # start point do programa
+def novoContato(nome, telefone):
+    global id_novo_contato
+    contato = {'id': id_novo_contato + 1, 'nome': nome, 'telefone': telefone}
+    id_novo_contato += 1
+    return contato
+
+if __name__ == 'main':
+    global id_novo_contato
+    id_novo_contato = 0
+
+
 if __name__ == '__main__':
     opcao = 0
+
+    agenda_de_contatos = []
+    id_novo_contato = 0
 
     while(opcao != 4):
         print('\nMenu')
@@ -9,15 +23,22 @@ if __name__ == '__main__':
         print('3 - Mostrar contatos')
         print('4 - Sair\n')
         opcao = int(input('Opção: '))
-
+        contatos ={}
         if(not (opcao >= 1 and opcao <= 4)):
             print('Opção inválida! Tente novamente.')
         elif(opcao == 1):
-            print('Código de cadastro de contato aqui')
+            nome = str(input('Nome do contato:'))
+            telefone = input('Número do contato:')
+
+            agenda_de_contatos.append(novoContato(nome, telefone))
+            print(f'contato {nome} adicionado!!')
+
         elif(opcao == 2):
-            print('Código de remover contato aqui')
-        elif(opcao == 3):
-            print('Código de mostrar contato aqui')
+            print('opção invalida, tente novamente!!')
+
+        elif (opcao == 3):
+            print('opção invalida, tente novamente!!')
+
         else:
             print('Programa encerrado.')
             exit
