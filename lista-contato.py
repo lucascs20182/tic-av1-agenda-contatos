@@ -46,7 +46,7 @@ if __name__ == 'main':
             print('Código de remover contato aqui')
 
         elif (opcao == 3):
-            print('Código de mostrar contatos aqui')
+            print('Código de mostrar contatos')
 
 
         else:
