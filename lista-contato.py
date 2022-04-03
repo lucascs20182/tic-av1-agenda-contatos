@@ -1,4 +1,3 @@
-# start point do programa
 def novoContato(nome, ddd , telefone):
     global id_novo_contato
 
@@ -8,13 +7,13 @@ def novoContato(nome, ddd , telefone):
 
 def obter_celular_ou_telefone():
     numero_do_contato = input('Número do contato:')
-    while numero_do_contato != 8 or 9:
-        print(f'Número invalido, tente novamente!!')
-        numero_do_contato = input('Número do contato:')
+    while len(numero_do_contato) != 8 or 9:
+        print(f'Número inválido, tente novamente!')
+        numero_do_contato = input('Número do contato: ')
     return numero_do_contato
     
-# Starpoint Programa 
-if __name__ == 'main':
+# start point do programa
+if __name__ == '__main__':
     global id_novo_contato
     id_novo_contato = 0
     agenda_de_contatos = []
@@ -32,23 +31,16 @@ if __name__ == 'main':
         if(not (opcao >= 1 and opcao <= 4)):
             print('Opção inválida! Tente novamente.')
         elif(opcao == 1):
-            
-            nome = str(input('Nome do contato:'))
-            ddd = int(input('DDD:'))
-            numero_de_telefone = obter_celular_ou_telefone()
-            
+            nome = str(input('Nome do contato: '))
+            ddd = int(input('DDD: '))
+            numero_do_contato = obter_celular_ou_telefone()
 
-
-            agenda_de_contatos.append(novoContato(nome,ddd,  numero_de_telefone))
-            print(f'contato {nome} adicionado!!')
-
+            agenda_de_contatos.append(novoContato(nome, ddd, numero_do_contato))
+            print(f'contato {nome} salvo!')
         elif(opcao == 2):
             print('Código de remover contato aqui')
-
         elif (opcao == 3):
             print('Código de mostrar contatos')
-
-
         else:
             print('Programa encerrado.')
             exit
